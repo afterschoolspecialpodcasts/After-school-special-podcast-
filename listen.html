@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Listen | After School Special Podcast</title>
+  <meta name="description" content="Stream After School Special Podcast on Spotify, Apple Podcasts, YouTube, and TikTok. Detroit's premier throwback culture podcast — available everywhere you listen.">
+  <link rel="canonical" href="https://DOMAIN.com/listen.html">
+  <meta name="robots" content="noindex, nofollow">
+  <meta property="og:title" content="Listen | After School Special Podcast">
+  <meta property="og:description" content="Stream After School Special Podcast on Spotify, Apple Podcasts, YouTube, and TikTok. Available everywhere you listen.">
+  <meta property="og:image" content="https://DOMAIN.com/images/og-preview.jpg">
+  <meta property="og:url" content="https://DOMAIN.com/listen.html">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Listen | After School Special Podcast">
+  <meta name="twitter:description" content="Stream After School Special Podcast on Spotify, Apple Podcasts, YouTube, and TikTok. Available everywhere you listen.">
+  <meta name="twitter:image" content="https://DOMAIN.com/images/og-preview.jpg">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="apple-touch-icon" href="favicon.png">
+  <meta name="theme-color" content="#2a0a44">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XXXXXXXXXX');</script>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* ── Listen page specific ── */
+    .listen-hero-section {
+      background: radial-gradient(ellipse at 50% 60%, #3d1266 0%, var(--bg-dark) 70%);
+      padding: 6rem 1.5rem 5rem;
+      text-align: center;
+      border-bottom: 1px solid var(--border-gold);
+    }
+
+    .listen-hero-section h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+
+    .listen-hero-section p {
+      color: var(--text-muted);
+      max-width: 540px;
+      margin: 0 auto;
+      font-size: 1.05rem;
+      line-height: 1.7;
+    }
+
+    /* Main platform section */
+    .listen-main {
+      background: var(--bg-deeper);
+      padding: var(--section-pad) 0;
+    }
+
+    /* Big featured platform cards */
+    .platform-featured-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.75rem;
+      margin-bottom: 1.75rem;
+    }
+
+    @media (max-width: 700px) {
+      .platform-featured-grid { grid-template-columns: 1fr; }
+    }
+
+    .platform-featured-card {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1.25rem;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--border-card);
+      border-radius: 16px;
+      padding: 2rem;
+      transition: background var(--transition), transform var(--transition), border-color var(--transition);
+      text-decoration: none;
+    }
+    .platform-featured-card:hover {
+      background: rgba(244, 211, 94, 0.06);
+      transform: translateY(-4px);
+      border-color: rgba(244, 211, 94, 0.25);
+    }
+
+    .platform-featured-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 60px;
+      height: 60px;
+      border-radius: 14px;
+      background: rgba(255,255,255,0.05);
+    }
+
+    .platform-featured-label {
+      font-family: var(--font-display);
+      font-size: 1.45rem;
+      color: var(--accent);
+      display: block;
+    }
+
+    .platform-featured-desc {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+      flex: 1;
+    }
+
+    .platform-cta-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--accent);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      transition: gap var(--transition);
+    }
+    .platform-cta-link:hover { gap: 0.65rem; }
+    .platform-cta-link svg { transition: transform var(--transition); }
+    .platform-cta-link:hover svg { transform: translateX(3px); }
+
+    /* Secondary platform list */
+    .platform-secondary-row {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.25rem;
+    }
+
+    @media (max-width: 600px) {
+      .platform-secondary-row { grid-template-columns: 1fr; }
+    }
+
+    /* Social section */
+    .social-section {
+      background: var(--bg-dark);
+      padding: var(--section-pad) 0;
+    }
+    .social-section .section-heading { color: var(--text-white); }
+
+    .social-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.25rem;
+      margin-top: 2.75rem;
+    }
+
+    .social-card {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      background: var(--bg-card);
+      border: 1px solid var(--border-card);
+      border-radius: var(--radius);
+      padding: 1.4rem 1.5rem;
+      transition: transform var(--transition), box-shadow var(--transition);
+      text-decoration: none;
+    }
+    .social-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 32px rgba(0,0,0,0.4);
+    }
+
+    .social-card-icon {
+      flex-shrink: 0;
+      color: var(--accent);
+    }
+    .social-card-icon svg { width: 30px; height: 30px; }
+
+    .social-card-label {
+      font-weight: 700;
+      color: var(--text-white);
+      font-size: 0.95rem;
+      display: block;
+    }
+    .social-card-handle {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      display: block;
+      margin-top: 0.15rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ══ NAVBAR ══ -->
+  <header id="navbar" role="banner">
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-logo" aria-label="After School Special Podcast — home">
+        <img src="images/afterschoolspecialpodcastlogo.png" alt="After School Special Podcast logo" height="48" loading="lazy">
+      </a>
+      <nav aria-label="Main navigation">
+        <ul class="nav-links">
+          <li><a href="episodes.html">Episodes</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="listen.html" class="active">Listen</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="nav-right">
+        <a href="https://open.spotify.com/show/4eDsdJVZuryyBdSL1KuzRB?si=TBrPaqwSQeCFxHXnWOUmeQ"
+           target="_blank" rel="noopener noreferrer" class="btn-primary" aria-label="Listen on Spotify">
+          Listen Now
+        </a>
+        <div class="nav-icons" aria-label="Social media">
+          <a href="https://instagram.com/PASTE_INSTAGRAM_HANDLE_HERE" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+              <circle cx="12" cy="12" r="4.5"/>
+              <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
+            </svg>
+          </a>
+          <a href="https://www.tiktok.com/@afterschoolspecial3?_r=1&_t=ZP-95Q65GnrFPi" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.72a8.2 8.2 0 0 0 4.78 1.52V6.79a4.85 4.85 0 0 1-1.01-.1z"/>
+            </svg>
+          </a>
+        </div>
+        <button class="hamburger" id="hamburgerBtn" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true">
+            <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Menu -->
+  <nav id="mobileMenu" class="mobile-menu" aria-label="Mobile navigation" aria-hidden="true">
+    <button class="mobile-close" id="mobileClose" aria-label="Close menu">&#x2715;</button>
+    <a href="episodes.html" class="mobile-link">Episodes</a>
+    <a href="about.html" class="mobile-link">About</a>
+    <a href="listen.html" class="mobile-link">Listen</a>
+    <a href="contact.html" class="mobile-link">Contact</a>
+    <a href="https://open.spotify.com/show/4eDsdJVZuryyBdSL1KuzRB?si=TBrPaqwSQeCFxHXnWOUmeQ"
+       target="_blank" rel="noopener noreferrer" class="btn-primary">Listen on Spotify</a>
+  </nav>
+
+  <!-- ══ HERO ══ -->
+  <div class="listen-hero-section">
+    <div class="container">
+      <span class="eyebrow-pill">Available Everywhere</span>
+      <h1>Listen &amp; Watch</h1>
+      <p>After School Special is on every major platform. Pick your favorite, hit subscribe, and never miss a drop.</p>
+    </div>
+  </div>
+
+  <!-- ══ MAIN PLATFORMS ══ -->
+  <section class="listen-main">
+    <div class="container">
+      <span class="section-label">Podcast Platforms</span>
+      <h2 class="section-heading">Stream the Podcast</h2>
+      <div class="divider-accent"></div>
+
+      <!-- Featured Cards: Spotify + Apple -->
+      <div class="platform-featured-grid">
+
+        <!-- Spotify -->
+        <a href="https://open.spotify.com/show/4eDsdJVZuryyBdSL1KuzRB?si=TBrPaqwSQeCFxHXnWOUmeQ"
+           target="_blank" rel="noopener noreferrer"
+           class="platform-featured-card" aria-label="Listen to After School Special Podcast on Spotify">
+          <div class="platform-featured-icon">
+            <svg width="38" height="38" viewBox="0 0 24 24" fill="#1DB954" aria-hidden="true"><path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm4.586 14.424a.622.622 0 0 1-.857.207c-2.348-1.435-5.304-1.76-8.785-.964a.623.623 0 0 1-.277-1.215c3.809-.87 7.076-.496 9.713 1.115.294.18.387.563.206.857zm1.223-2.722a.78.78 0 0 1-1.072.257c-2.687-1.652-6.785-2.13-9.965-1.166a.78.78 0 0 1-.973-.519.78.78 0 0 1 .52-.972c3.632-1.102 8.147-.568 11.233 1.329a.78.78 0 0 1 .257 1.071zm.105-2.835C14.692 8.95 9.375 8.775 6.297 9.71a.937.937 0 1 1-.543-1.793c3.563-1.08 9.492-.871 13.234 1.297a.937.937 0 0 1-.074 1.653z"/></svg>
+          </div>
+          <div>
+            <span class="platform-featured-label">Spotify</span>
+            <p class="platform-featured-desc">Our primary home. Stream every episode, follow the show for instant notifications when new episodes drop, and listen free on any device.</p>
+          </div>
+          <span class="platform-cta-link">
+            Stream on Spotify
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </span>
+        </a>
+
+        <!-- Apple Podcasts -->
+        <a href="PASTE_APPLE_URL_HERE"
+           target="_blank" rel="noopener noreferrer"
+           class="platform-featured-card" aria-label="Listen to After School Special Podcast on Apple Podcasts">
+          <div class="platform-featured-icon">
+            <svg width="38" height="38" viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="appleGrad2" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#F452FF"/><stop offset="100%" stop-color="#832BC1"/></linearGradient></defs><path fill="url(#appleGrad2)" d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm0 4.5a7.5 7.5 0 1 1 0 15 7.5 7.5 0 0 1 0-15zm0 2a5.5 5.5 0 1 0 0 11 5.5 5.5 0 0 0 0-11zm0 2a3.5 3.5 0 1 1 0 7 3.5 3.5 0 0 1 0-7zm0 2a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3z"/></svg>
+          </div>
+          <div>
+            <span class="platform-featured-label">Apple Podcasts</span>
+            <p class="platform-featured-desc">Subscribe on Apple Podcasts and episodes auto-download straight to your library. Leaving a rating helps more Detroit listeners find the show.</p>
+          </div>
+          <span class="platform-cta-link">
+            Open Apple Podcasts
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </span>
+        </a>
+
+      </div>
+
+      <!-- Secondary Cards: YouTube + TikTok -->
+      <div class="platform-secondary-row">
+
+        <!-- YouTube -->
+        <a href="https://youtube.com/playlist?list=PLUnJ58rriL2lv7HxYcTJfqJdpcnywrolD&si=YgbJuKn2kRoHiyPX"
+           target="_blank" rel="noopener noreferrer"
+           class="platform-card" aria-label="Watch After School Special Podcast on YouTube">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="#FF0000" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          <div>
+            <strong>YouTube</strong>
+            <span class="platform-sub">Full video episodes</span>
+          </div>
+        </a>
+
+        <!-- TikTok -->
+        <a href="https://www.tiktok.com/@afterschoolspecial3?_r=1&_t=ZP-95Q65GnrFPi"
+           target="_blank" rel="noopener noreferrer"
+           class="platform-card" aria-label="Follow After School Special Podcast on TikTok">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="#ffffff" aria-hidden="true"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.72a8.2 8.2 0 0 0 4.78 1.52V6.79a4.85 4.85 0 0 1-1.01-.1z"/></svg>
+          <div>
+            <strong>TikTok</strong>
+            <span class="platform-sub">Clips &amp; highlights</span>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ SOCIAL ══ -->
+  <section class="social-section">
+    <div class="container">
+      <div class="text-center">
+        <span class="section-label">Stay Connected</span>
+        <h2 class="section-heading">Follow the Show</h2>
+        <div class="divider-accent" style="margin:0 auto;"></div>
+        <p style="color:var(--text-muted);max-width:480px;margin:1rem auto 0;font-size:0.93rem;">New episodes, behind-the-scenes moments, and whatever the crew decides to post between recordings.</p>
+      </div>
+      <div class="social-cards">
+
+        <a href="https://instagram.com/PASTE_INSTAGRAM_HANDLE_HERE"
+           target="_blank" rel="noopener noreferrer"
+           class="social-card" aria-label="Follow After School Special Podcast on Instagram">
+          <div class="social-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+              <circle cx="12" cy="12" r="4.5"/>
+              <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
+            </svg>
+          </div>
+          <div>
+            <span class="social-card-label">Instagram</span>
+            <span class="social-card-handle">@afterschoolspecialpodcast</span>
+          </div>
+        </a>
+
+        <a href="https://www.tiktok.com/@afterschoolspecial3?_r=1&_t=ZP-95Q65GnrFPi"
+           target="_blank" rel="noopener noreferrer"
+           class="social-card" aria-label="Follow After School Special Podcast on TikTok">
+          <div class="social-card-icon">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.72a8.2 8.2 0 0 0 4.78 1.52V6.79a4.85 4.85 0 0 1-1.01-.1z"/>
+            </svg>
+          </div>
+          <div>
+            <span class="social-card-label">TikTok</span>
+            <span class="social-card-handle">@afterschoolspecial3</span>
+          </div>
+        </a>
+
+        <a href="https://youtube.com/playlist?list=PLUnJ58rriL2lv7HxYcTJfqJdpcnywrolD&si=YgbJuKn2kRoHiyPX"
+           target="_blank" rel="noopener noreferrer"
+           class="social-card" aria-label="Watch After School Special Podcast on YouTube">
+          <div class="social-card-icon">
+            <svg viewBox="0 0 24 24" fill="#FF0000" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          </div>
+          <div>
+            <span class="social-card-label">YouTube</span>
+            <span class="social-card-handle">Full video episodes playlist</span>
+          </div>
+        </a>
+
+        <a href="mailto:afterschoolspecialpodcast@gmail.com"
+           class="social-card" aria-label="Email After School Special Podcast">
+          <div class="social-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="30" height="30" aria-hidden="true">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+              <polyline points="22,6 12,13 2,6"/>
+            </svg>
+          </div>
+          <div>
+            <span class="social-card-label">Email</span>
+            <span class="social-card-handle">afterschoolspecialpodcast.com</span>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ FOOTER ══ -->
+  <footer role="contentinfo">
+    <div class="container footer-inner">
+      <a href="index.html" class="footer-logo" aria-label="After School Special Podcast home">
+        <img src="images/afterschoolspecialpodcastlogo.png" alt="After School Special Podcast" height="40" loading="lazy">
+      </a>
+      <div class="footer-center">
+        <p>&copy; 2026 After School Special Podcast. All rights reserved.</p>
+        <p class="footer-credit">Website by <a href="https://dysondigital.com" target="_blank" rel="noopener noreferrer">Dyson Digital</a> &nbsp;&middot;&nbsp; dysondigital.com</p>
+      </div>
+      <div class="footer-right" aria-label="Social links">
+        <a href="https://instagram.com/PASTE_INSTAGRAM_HANDLE_HERE" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+            <circle cx="12" cy="12" r="4.5"/>
+            <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
+          </svg>
+        </a>
+        <a href="https://www.tiktok.com/@afterschoolspecial3?_r=1&_t=ZP-95Q65GnrFPi" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.72a8.2 8.2 0 0 0 4.78 1.52V6.79a4.85 4.85 0 0 1-1.01-.1z"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const hamburgerBtn = document.getElementById('hamburgerBtn');
+    const mobileMenu   = document.getElementById('mobileMenu');
+    const mobileClose  = document.getElementById('mobileClose');
+    const mobileLinks  = mobileMenu.querySelectorAll('.mobile-link');
+    function openMenu()  { mobileMenu.classList.add('open'); mobileMenu.setAttribute('aria-hidden','false'); hamburgerBtn.setAttribute('aria-expanded','true'); document.body.style.overflow='hidden'; }
+    function closeMenu() { mobileMenu.classList.remove('open'); mobileMenu.setAttribute('aria-hidden','true'); hamburgerBtn.setAttribute('aria-expanded','false'); document.body.style.overflow=''; }
+    hamburgerBtn.addEventListener('click', openMenu);
+    mobileClose.addEventListener('click', closeMenu);
+    mobileLinks.forEach(l => l.addEventListener('click', closeMenu));
+    document.addEventListener('keydown', e => { if(e.key==='Escape') closeMenu(); });
+  </script>
+
+</body>
+</html>
