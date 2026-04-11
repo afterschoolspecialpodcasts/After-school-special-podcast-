@@ -147,10 +147,16 @@
     </div>
   </div>
 
-  <!-- ══ SECTION 1: EPISODE 108 SPOTLIGHT — top of page, centered ══ -->
-  <section id="ep106-spotlight" aria-label="Latest Episode Spotlight">
+  <!-- ══════════════════════════════════════════════════════
+       SECTION 1: EP 108 SPOTLIGHT
+       Large, centered grid — player fills right column.
+       max-width: 1200px centered via .container
+  ════════════════════════════════════════════════════════ -->
+  <section id="ep106-spotlight" aria-label="Latest Episode Spotlight" style="background:linear-gradient(135deg,var(--bg-deeper) 0%,#2a0a44 60%,#1a0033 100%);padding:5rem 0;border-bottom:2px solid var(--border-gold);">
     <div class="container">
-      <div class="ep106-inner">
+      <div class="ep-spotlight-inner">
+
+        <!-- Left: info + CTAs -->
         <div>
           <div class="ep106-live-badge" aria-label="Now Playing">NOW PLAYING</div>
           <div class="ep106-ep-number">EP. 108</div>
@@ -168,9 +174,10 @@
             <a href="https://podcasts.apple.com/us/podcast/after-school-special-podcast/id1562094626" target="_blank" rel="noopener noreferrer" class="btn-outline" style="font-size:0.85rem;padding:0.65rem 1.3rem;">Apple Podcasts</a>
           </div>
         </div>
-        <!-- Spotify mini-player centered on desktop -->
-        <div class="embed-frame">
-          <div class="iframe-wrap iframe-wrap--mini">
+
+        <!-- Right: Spotify mini-player, 232px, saves/share buttons visible -->
+        <div class="ep-spotlight-player">
+          <div class="spotify-player-wrap spotify-player-wrap--styled">
             <iframe
               src="https://open.spotify.com/embed/show/4eDsdJVZuryyBdSL1KuzRB?utm_source=generator&theme=0"
               frameborder="0"
@@ -181,6 +188,7 @@
             ></iframe>
           </div>
         </div>
+
       </div>
     </div>
   </section>
@@ -193,27 +201,39 @@
     </div>
   </div>
 
-  <!-- ══ SECTION 2: WELCOME VIDEO — cinematic, full width ══ -->
-  <section id="welcome-video" aria-label="Welcome video">
+  <!-- ══════════════════════════════════════════════════════
+       SECTION 2: WELCOME VIDEO
+       max-width: 900px centered — "secret sauce" for pro look.
+       100% width on mobile, capped at 900px on desktop.
+  ════════════════════════════════════════════════════════ -->
+  <section id="welcome-video" aria-label="Welcome video" style="background:var(--bg-dark);padding:4.5rem 0;">
     <div class="container">
-      <span class="section-label">Welcome to the Show</span>
+      <span class="section-label" style="text-align:center;display:block;">Welcome to the Show</span>
       <h2 class="section-heading" style="text-align:center;color:var(--accent);">What We're About</h2>
       <div class="divider-accent" style="margin:0 auto 1rem;"></div>
       <p style="text-align:center;color:var(--text-muted);margin-bottom:2rem;font-size:0.95rem;max-width:540px;margin-left:auto;margin-right:auto;">
         New here? This is who we are — three Detroit guys, one mic, zero filter.
       </p>
-      <!-- Full-width cinematic 16:9 embed — fills container on desktop -->
-      <div class="embed-frame">
-        <div class="iframe-wrap">
-          <iframe
-            src="https://www.youtube.com/embed/iHgS2sTCpyY?rel=0&modestbranding=1"
-            title="After School Special Podcast — Welcome Video"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen
-            loading="lazy"
-          ></iframe>
+
+      <!--
+        .welcome-video-wrap caps at 900px on desktop via CSS.
+        On mobile it's 100% — see style.css .welcome-video-wrap.
+        Nested .iframe-wrap + .embed-frame handles the 16:9 ratio.
+      -->
+      <div class="welcome-video-wrap">
+        <div class="embed-frame">
+          <div class="iframe-wrap">
+            <iframe
+              src="https://www.youtube.com/embed/iHgS2sTCpyY?rel=0&modestbranding=1"
+              title="After School Special Podcast — Welcome Video"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+              loading="lazy"
+            ></iframe>
+          </div>
         </div>
       </div>
+
       <div style="text-align:center;margin-top:1.5rem;">
         <a href="watch.html" class="btn-outline">Explore the Watch Hub ↗</a>
       </div>
@@ -228,12 +248,12 @@
     </div>
   </div>
 
-  <!-- ══ SECTION 3: CREW GROUP PHOTO (no individual bios on homepage) ══ -->
+  <!-- ══ SECTION 3: CREW GROUP PHOTO ══ -->
   <section id="crew-photo-section" aria-label="Meet the crew">
     <div class="container">
       <div class="crew-photo-wrap">
         <div>
-          <img src="images/meetthecrew2.PNG" alt="After School Special Podcast hosts — Aaron, Double D, and Staffman" loading="lazy" class="crew-photo-img">
+          <img src="images/meetthecrew.jpeg" alt="After School Special Podcast hosts — Aaron, Double D, and Staffman" loading="lazy" class="crew-photo-img">
         </div>
         <div class="crew-photo-text">
           <span class="section-label">Your Hosts</span>
@@ -297,14 +317,14 @@
     </div>
   </div>
 
-  <!-- ══ SECTION 5: REAL APPLE PODCASTS REVIEWS — bottom of homepage ══ -->
+  <!-- ══ SECTION 5: REAL APPLE PODCASTS REVIEWS — bottom ══ -->
   <section id="reviews" aria-label="Verified Apple Podcasts reviews">
     <div class="container">
       <span class="section-label">Verified Listener Reviews</span>
       <h2 class="section-heading">What Fans Are Saying</h2>
 
       <div class="overall-rating">
-        <div class="overall-score" aria-label="5 out of 39 stars">5.0</div>
+        <div class="overall-score" aria-label="5 out of 5 stars">5.0</div>
         <div class="star-rating" aria-hidden="true">
           <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
           <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
@@ -328,12 +348,12 @@
           <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
           <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
         </span>
-        <strong>5.0 out of 39</strong>&nbsp;·&nbsp;Rated on Apple Podcasts
+        <strong>5.0 out of 5</strong>&nbsp;·&nbsp;Rated on Apple Podcasts
       </div>
 
       <div class="reviews-grid">
 
-        <!-- REAL REVIEW 1: TheDelegate — May 5, 2023 -->
+        <!-- REAL REVIEW 1: TheDelegate -->
         <div class="review-card">
           <div class="review-card-sticker review-card-sticker--a" aria-hidden="true">⭐</div>
           <div class="review-stars star-rating" aria-label="5 stars">
@@ -349,7 +369,7 @@
           <span class="review-source">Apple Podcasts · May 2023</span>
         </div>
 
-        <!-- REAL REVIEW 2: coolbrah4206969 — March 10, 2023 -->
+        <!-- REAL REVIEW 2: coolbrah4206969 -->
         <div class="review-card">
           <div class="review-card-sticker review-card-sticker--b" aria-hidden="true">🎧</div>
           <div class="review-stars star-rating" aria-label="5 stars">
@@ -365,7 +385,7 @@
           <span class="review-source">Apple Podcasts · March 2023</span>
         </div>
 
-        <!-- REAL REVIEW 3: rose c tha haitian mama — July 8, 2022 -->
+        <!-- REAL REVIEW 3: rose c tha haitian mama -->
         <div class="review-card">
           <div class="review-card-sticker review-card-sticker--c" aria-hidden="true">🔥</div>
           <div class="review-stars star-rating" aria-label="5 stars">
