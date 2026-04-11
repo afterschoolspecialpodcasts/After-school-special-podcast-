@@ -458,41 +458,36 @@
     </div>
   </footer>
 
-  <script>
-  // 1. Identify the menu and the buttons
-  const menu = document.querySelector('.mobile-menu') || document.getElementById('mobileMenu');
-  const openBtn = document.querySelector('.hamburger') || document.getElementById('hamburgerBtn');
-  const closeBtn = document.querySelector('.mobile-close') || document.getElementById('mobileClose');
-  
-  // 2. Target every link inside the menu
-  const navLinks = document.querySelectorAll('.mobile-menu a, .mobile-link, #mobileMenu a');
+ <script>
+  const menu = document.getElementById('mobileMenu') || document.querySelector('.mobile-menu');
+  const openBtn = document.getElementById('hamburgerBtn') || document.getElementById('hamburger');
+  const closeBtn = document.getElementById('mobileClose') || document.querySelector('.mobile-close');
+  const allNavLinks = document.querySelectorAll('#mobileMenu a, .mobile-link');
 
-  // 3. Logic to Open the menu
-  if (openBtn && menu) {
-    openBtn.addEventListener('click', () => {
-      menu.classList.add('open');
-      document.body.style.overflow = 'hidden'; // Keeps the background from moving
-    });
-  }
-
-  // 4. Logic to Close the menu
-  const doClose = () => {
+  const doOpen = () => {
     if (menu) {
-      menu.classList.remove('open');
-      document.body.style.overflow = ''; // Restores normal scrolling
+      menu.classList.add('open');
+      menu.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
     }
   };
 
-  // Close with the 'X' button
-  if (closeBtn) {
-    closeBtn.addEventListener('click', doClose);
-  }
+  const doClose = () => {
+    if (menu) {
+      menu.classList.remove('open');
+      menu.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    }
+  };
 
-  // 5. THE FIX: Close menu automatically when any link is tapped
-  navLinks.forEach(link => {
+  if (openBtn) openBtn.addEventListener('click', doOpen);
+  if (closeBtn) closeBtn.addEventListener('click', doClose);
+
+  allNavLinks.forEach(link => {
     link.addEventListener('click', doClose);
   });
 </script>
+
 
 </body>
 </html>
