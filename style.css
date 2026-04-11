@@ -463,8 +463,7 @@ section {
   object-fit: cover;    /* Zooms/crops images to fill the space without stretching */
   background: var(--bg-deeper);
   display: block;
-  border-bottom: 1px solid var(--border-card);}
-
+  border-bottom: 1px solid var(--border-card); }
 
 .ep-body {
   padding: 1.5rem 1.5rem 1.75rem;
