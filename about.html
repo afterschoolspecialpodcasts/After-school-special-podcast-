@@ -22,140 +22,12 @@
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XXXXXXXXXX');</script>
   <link rel="stylesheet" href="style.css">
-  <style>
-    /* ── About page specific styles ── */
-    .about-story-section {
-      background: var(--bg-light);
-      padding: var(--section-pad) 0;
-    }
-    .about-story-section .section-label { color: var(--bg-card); }
-    .about-story-section .section-heading { color: var(--bg-dark); }
-    .about-story-section p {
-      color: var(--text-dark);
-      margin-bottom: 1.2rem;
-      line-height: 1.82;
-      font-size: 0.97rem;
-      max-width: 760px;
-    }
-
-    .story-grid {
-      display: grid;
-      grid-template-columns: 1.1fr 1fr;
-      gap: 5rem;
-      align-items: start;
-    }
-
-    @media (max-width: 900px) {
-      .story-grid { grid-template-columns: 1fr; gap: 3rem; }
-    }
-
-    .story-image-col img {
-      width: 100%;
-      border-radius: 14px;
-      border: 3px solid var(--bg-dark);
-      object-fit: cover;
-    }
-
-    /* Crew section */
-    .crew-section {
-      background: var(--bg-dark);
-      padding: var(--section-pad) 0;
-    }
-    .crew-section .section-heading { color: var(--accent); }
-
-    .crew-cards {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.75rem;
-      margin-top: 3rem;
-    }
-
-    @media (max-width: 767px) {
-      .crew-cards { grid-template-columns: 1fr; gap: 1.25rem; }
-    }
-
-    .crew-member-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border-card);
-      border-radius: var(--radius);
-      padding: 2rem 1.75rem;
-      text-align: center;
-      transition: transform var(--transition), box-shadow var(--transition);
-    }
-    .crew-member-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 16px 40px rgba(0,0,0,0.45);
-    }
-
-    .crew-avatar-lg {
-      width: 72px;
-      height: 72px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, var(--bg-deeper), #4a1580);
-      border: 2px solid var(--accent);
-      color: var(--accent);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: var(--font-display);
-      font-size: 1.75rem;
-      margin: 0 auto 1.25rem;
-    }
-
-    .crew-member-name {
-      font-family: var(--font-display);
-      font-size: 1.35rem;
-      color: var(--accent);
-      margin-bottom: 0.4rem;
-    }
-
-    .crew-member-role {
-      font-size: 0.76rem;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-      margin-bottom: 1rem;
-    }
-
-    .crew-member-bio {
-      font-size: 0.9rem;
-      color: rgba(255,255,255,0.8);
-      line-height: 1.7;
-    }
-
-    /* Mission statement bar */
-    .mission-bar {
-      background: var(--accent);
-      padding: 3rem 1.5rem;
-      text-align: center;
-    }
-    .mission-bar blockquote {
-      font-family: var(--font-display);
-      font-size: clamp(1.3rem, 3vw, 2rem);
-      color: var(--text-dark);
-      max-width: 780px;
-      margin: 0 auto;
-      line-height: 1.4;
-      font-style: italic;
-    }
-    .mission-bar cite {
-      display: block;
-      font-family: var(--font-body);
-      font-style: normal;
-      font-size: 0.82rem;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--text-dark);
-      opacity: 0.65;
-      margin-top: 1rem;
-    }
-  </style>
 </head>
 <body>
 
-  <!-- ══ NAVBAR ══ -->
+  <!-- ══════════════════════════════════════════════════════
+       NAVBAR
+  ════════════════════════════════════════════════════════ -->
   <header id="navbar" role="banner">
     <div class="container nav-inner">
       <a href="index.html" class="nav-logo" aria-label="After School Special Podcast — home">
@@ -165,14 +37,13 @@
         <ul class="nav-links">
           <li><a href="episodes.html">Episodes</a></li>
           <li><a href="about.html" class="active">About</a></li>
-          <li><a href="listen.html">Listen</a></li>
+          <li><a href="episodes.html">Watch</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </nav>
       <div class="nav-right">
-        <a href="https://open.spotify.com/show/4eDsdJVZuryyBdSL1KuzRB?si=TBrPaqwSQeCFxHXnWOUmeQ"
-           target="_blank" rel="noopener noreferrer" class="btn-primary" aria-label="Listen on Spotify">
-          Listen Now
+        <a href="episodes.html" class="btn-primary" aria-label="Watch latest episode">
+          Watch Now
         </a>
         <div class="nav-icons" aria-label="Social media">
           <a href="https://instagram.com/PASTE_INSTAGRAM_HANDLE_HERE" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
@@ -190,7 +61,9 @@
         </div>
         <button class="hamburger" id="hamburgerBtn" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true">
-            <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+            <line x1="3" y1="6" x2="21" y2="6"/>
+            <line x1="3" y1="12" x2="21" y2="12"/>
+            <line x1="3" y1="18" x2="21" y2="18"/>
           </svg>
         </button>
       </div>
@@ -202,23 +75,36 @@
     <button class="mobile-close" id="mobileClose" aria-label="Close menu">&#x2715;</button>
     <a href="episodes.html" class="mobile-link">Episodes</a>
     <a href="about.html" class="mobile-link">About</a>
-    <a href="listen.html" class="mobile-link">Listen</a>
+    <a href="episodes.html" class="mobile-link">Watch</a>
     <a href="contact.html" class="mobile-link">Contact</a>
-    <a href="https://open.spotify.com/show/4eDsdJVZuryyBdSL1KuzRB?si=TBrPaqwSQeCFxHXnWOUmeQ"
-       target="_blank" rel="noopener noreferrer" class="btn-primary">Listen on Spotify</a>
+    <a href="episodes.html" class="btn-primary mobile-link">Watch Now</a>
   </nav>
 
-  <!-- ══ PAGE HERO ══ -->
+  <!-- ══════════════════════════════════════════════════════
+       PAGE HERO
+  ════════════════════════════════════════════════════════ -->
   <div class="page-hero">
     <div class="container">
       <span class="eyebrow-pill">Our Story</span>
-      <h1 class="section-heading" style="color:var(--accent);font-size:clamp(2rem,4vw,3rem);margin-top:0.5rem;">About the Show</h1>
+      <h1 class="section-heading" style="color:var(--accent);font-size:clamp(2rem,4vw,3rem);margin-top:0.5rem;">
+        About the Show
+      </h1>
       <p>Three Detroit guys. One shared obsession with the culture that raised them. Zero filter.</p>
     </div>
   </div>
 
-  <!-- ══ ORIGIN STORY ══ -->
-  <section class="about-story-section">
+  <!-- CAUTION TAPE #1 -->
+  <div class="caution-tape caution-tape--ybk" role="presentation" aria-hidden="true">
+    <div class="caution-tape-inner">
+      <span>⚠ HOW IT STARTED ⚠</span><span>⚠ DETROIT MADE US ⚠</span><span>⚠ THREE GUYS ONE MIC ⚠</span><span>⚠ 106 EPISODES STRONG ⚠</span>
+      <span>⚠ HOW IT STARTED ⚠</span><span>⚠ DETROIT MADE US ⚠</span><span>⚠ THREE GUYS ONE MIC ⚠</span><span>⚠ 106 EPISODES STRONG ⚠</span>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════
+       ORIGIN STORY
+  ════════════════════════════════════════════════════════ -->
+  <section class="about-story-section" aria-label="Show origin story">
     <div class="container">
       <div class="story-grid">
 
@@ -231,8 +117,8 @@
           <p>What started as a living room experiment quickly grew into something bigger. Every week, Aaron, Double D, and Staffman show up with a topic, no script, and a shared philosophy: if it defined your childhood, shaped your city, or made you feel something — it's worth talking about. Throwback culture isn't nostalgia for nostalgia's sake. It's a lens for understanding where we came from and who we became.</p>
           <p>Detroit has always been a city that moves at its own pace, builds its own culture, and doesn't wait for permission. After School Special is the same way — rooted in the city, made for anyone who grew up feeling like the culture they loved wasn't being covered the way it deserved. This is that show.</p>
           <div style="margin-top:2rem;display:flex;gap:1rem;flex-wrap:wrap;">
-            <a href="episodes.html" class="btn-primary">Browse Episodes</a>
-            <a href="listen.html" class="btn-outline">Listen Now</a>
+            <a href="episodes.html" class="btn-primary">Watch Episodes</a>
+            <a href="episodes.html" class="btn-outline">Full Media Hub</a>
           </div>
         </div>
 
@@ -249,7 +135,9 @@
     </div>
   </section>
 
-  <!-- ══ MISSION BAR ══ -->
+  <!-- ══════════════════════════════════════════════════════
+       MISSION BAR
+  ════════════════════════════════════════════════════════ -->
   <div class="mission-bar" aria-label="Mission statement">
     <blockquote>
       "Rooted in Detroit. Built for anyone who grew up too fast and wants to slow it back down."
@@ -257,47 +145,133 @@
     </blockquote>
   </div>
 
-  <!-- ══ MEET THE CREW ══ -->
-  <section class="crew-section">
+  <!-- CAUTION TAPE #2 -->
+  <div class="caution-tape caution-tape--pgold" role="presentation" aria-hidden="true">
+    <div class="caution-tape-inner">
+      <span>★ MEET THE CREW ★</span><span>★ AARON ★</span><span>★ DOUBLE D ★</span><span>★ STAFFMAN ★</span><span>★ DETROIT MADE ★</span>
+      <span>★ MEET THE CREW ★</span><span>★ AARON ★</span><span>★ DOUBLE D ★</span><span>★ STAFFMAN ★</span><span>★ DETROIT MADE ★</span>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════
+       MEET THE CREW — Full Host Cards with headshots
+       BIO SWAP LOGIC (mirrored from index.html):
+       · Double D  → technical/visionary style
+       · Aaron     → personality/history style
+       · Staffman  → high-energy/Detroit style
+  ════════════════════════════════════════════════════════ -->
+  <section class="hosts-section" aria-label="Meet the hosts">
     <div class="container">
-      <div class="text-center">
-        <span class="section-label">The Hosts</span>
-        <h2 class="section-heading">Meet the Crew</h2>
-        <div class="divider-accent" style="margin:0 auto;"></div>
-        <p style="color:var(--text-muted);max-width:540px;margin:1rem auto 0;font-size:0.95rem;">The three people responsible for your throwback-fueled commute every week.</p>
-      </div>
+      <span class="section-label">The Hosts</span>
+      <h2 class="section-heading">Meet the Crew</h2>
+      <div class="divider-accent" style="margin:0 auto;"></div>
+      <p style="color:var(--text-muted);max-width:540px;margin:0.75rem auto 0;text-align:center;font-size:0.93rem;">
+        The three people responsible for your throwback-fueled commute every week.
+      </p>
 
-      <div class="crew-cards">
+      <div class="host-cards-grid">
 
-        <!-- Aaron -->
-        <div class="crew-member-card">
-          <div class="crew-avatar-lg" aria-hidden="true">A</div>
-          <h3 class="crew-member-name">Aaron</h3>
-          <p class="crew-member-role">Co-Host &amp; Detroit Sports Authority</p>
-          <p class="crew-member-bio">Aaron is the crew's voice of reason — until someone says something he fundamentally disagrees with, which happens roughly twice per episode. A Detroit sports die-hard through and through, he brings the kind of encyclopedic knowledge about teams, players, and games that can only be earned through genuine fandom and decades of heartbreak. Whether he's breaking down the '04 Pistons or defending a deeply controversial pop culture opinion, Aaron keeps the show grounded and the conversation honest.</p>
+        <!-- DOUBLE D — Technical/Visionary style -->
+        <div class="host-card-full">
+          <img
+            src="images/host-double-d.png"
+            alt="Double D — co-host of After School Special Podcast"
+            loading="lazy"
+            class="host-card-photo"
+          >
+          <div class="host-card-body">
+            <h3 class="host-card-name">Double D</h3>
+            <p class="host-card-role">Co-Host &amp; The Architect</p>
+            <p class="host-card-bio">Double D is the strategic engine behind After School Special. He's the one who sees the bigger picture — connecting cultural dots across decades with an almost analytical precision that makes every topic feel like it was always heading somewhere important. His encyclopedic command of throwback entertainment isn't just trivia; it's framework. He's the reason the show has structure underneath the chaos, and the reason listeners keep coming back expecting to learn something they didn't know they needed.</p>
+          </div>
         </div>
 
-        <!-- Double D -->
-        <div class="crew-member-card">
-          <div class="crew-avatar-lg" aria-hidden="true">DD</div>
-          <h3 class="crew-member-name">Double D</h3>
-          <p class="crew-member-role">Co-Host &amp; Chief Nostalgia Officer</p>
-          <p class="crew-member-bio">If it aired, dropped, or came out before 2005, Double D remembers it with suspicious accuracy. He's the show's self-appointed Chief Nostalgia Officer — equal parts historian and superfan — and the one most likely to pause a conversation to recall the exact episode number of a Nickelodeon series from 1997. Double D is the reason this podcast exists: his relentless enthusiasm for throwback culture is infectious, and his ability to connect those old stories to the present makes every episode feel like more than just a trip down memory lane.</p>
+        <!-- AARON — Personality/History style -->
+        <div class="host-card-full">
+          <img
+            src="images/host-aaron.png"
+            alt="Aaron — co-host of After School Special Podcast"
+            loading="lazy"
+            class="host-card-photo"
+          >
+          <div class="host-card-body">
+            <h3 class="host-card-name">Aaron</h3>
+            <p class="host-card-role">Co-Host &amp; The Storyteller</p>
+            <p class="host-card-bio">Aaron is the one who makes it personal. Every topic he touches gets layered with lived experience — the specific Detroit block, the specific year, the specific memory that makes a cultural moment feel real instead of just referenced. He never walks back a story, never softens a take, and has an almost supernatural ability to pull something from his own history that suddenly makes everyone else remember something they'd forgotten too. His presence on the show is what makes it feel less like a podcast and more like a conversation you wish you'd been there for.</p>
+          </div>
         </div>
 
-        <!-- Staffman -->
-        <div class="crew-member-card">
-          <div class="crew-avatar-lg" aria-hidden="true">S</div>
-          <h3 class="crew-member-name">Staffman</h3>
-          <p class="crew-member-role">Co-Host &amp; The Wildcard</p>
-          <p class="crew-member-bio">Every great crew has a wildcard, and Staffman is theirs. He shows up every episode ready to go — with opinions that are either completely reasonable or completely unhinged, and listeners never know which one they're getting until it's already out there. Staffman never backs down from a debate, never walks back a take, and brings an energy to the show that keeps every recording session unpredictable. He's also the one most likely to bring up something nobody else remembered but everyone immediately agrees they should have.</p>
+        <!-- STAFFMAN — High-energy/Detroit style -->
+        <div class="host-card-full">
+          <img
+            src="images/host-staffman.png"
+            alt="Staffman — co-host of After School Special Podcast"
+            loading="lazy"
+            class="host-card-photo"
+          >
+          <div class="host-card-body">
+            <h3 class="host-card-name">Staffman</h3>
+            <p class="host-card-role">Co-Host &amp; Detroit's Ambassador</p>
+            <p class="host-card-bio">Staffman is Detroit personified. He carries the city's voice in every episode — its pride, its edge, its refusal to back down from anything. He's the crew's motor: the one who sets the tone, raises the stakes, and makes sure nobody gets comfortable. Whether he's defending an unpopular take on 90s hip-hop or breaking down why a specific Detroit moment mattered to the rest of the world before the rest of the world caught up, Staffman brings the kind of energy that makes you turn the volume up. He doesn't just represent the culture — he lives it out loud every single episode.</p>
+          </div>
         </div>
 
       </div>
     </div>
   </section>
 
-  <!-- ══ FOOTER ══ -->
+  <!-- CAUTION TAPE #3 -->
+  <div class="caution-tape caution-tape--ybk" role="presentation" aria-hidden="true">
+    <div class="caution-tape-inner">
+      <span>⚡ LISTEN ON SPOTIFY ⚡</span><span>⚡ WATCH ON YOUTUBE ⚡</span><span>⚡ FOLLOW ON TIKTOK ⚡</span><span>⚡ APPLE PODCASTS ⚡</span>
+      <span>⚡ LISTEN ON SPOTIFY ⚡</span><span>⚡ WATCH ON YOUTUBE ⚡</span><span>⚡ FOLLOW ON TIKTOK ⚡</span><span>⚡ APPLE PODCASTS ⚡</span>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════
+       PLATFORM STRIP
+  ════════════════════════════════════════════════════════ -->
+  <section id="home-listen" aria-label="Listen and watch on all platforms">
+    <div class="container">
+      <div class="text-center">
+        <span class="section-label">Find Us Everywhere</span>
+        <h2 class="section-heading">Watch &amp; Listen</h2>
+        <div class="divider-accent" style="margin:0 auto 0;"></div>
+      </div>
+      <div class="platforms-grid">
+        <a href="https://open.spotify.com/show/4eDsdJVZuryyBdSL1KuzRB?si=TBrPaqwSQeCFxHXnWOUmeQ"
+           target="_blank" rel="noopener noreferrer" class="platform-card" aria-label="Listen on Spotify">
+          <svg width="34" height="34" viewBox="0 0 24 24" fill="#1DB954" aria-hidden="true"><path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm4.586 14.424a.622.622 0 0 1-.857.207c-2.348-1.435-5.304-1.76-8.785-.964a.623.623 0 0 1-.277-1.215c3.809-.87 7.076-.496 9.713 1.115.294.18.387.563.206.857zm1.223-2.722a.78.78 0 0 1-1.072.257c-2.687-1.652-6.785-2.13-9.965-1.166a.78.78 0 0 1-.973-.519.78.78 0 0 1 .52-.972c3.632-1.102 8.147-.568 11.233 1.329a.78.78 0 0 1 .257 1.071zm.105-2.835C14.692 8.95 9.375 8.775 6.297 9.71a.937.937 0 1 1-.543-1.793c3.563-1.08 9.492-.871 13.234 1.297a.937.937 0 0 1-.074 1.653z"/></svg>
+          <div><strong>Spotify</strong><span class="platform-sub">Stream all episodes</span></div>
+        </a>
+        <a href="https://podcasts.apple.com/us/podcast/after-school-special-podcast/id1562094626"
+           target="_blank" rel="noopener noreferrer" class="platform-card" aria-label="Listen on Apple Podcasts">
+          <svg width="34" height="34" viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="apG_abt" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#F452FF"/><stop offset="100%" stop-color="#832BC1"/></linearGradient></defs><path fill="url(#apG_abt)" d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm0 4.5a7.5 7.5 0 1 1 0 15 7.5 7.5 0 0 1 0-15zm0 2a5.5 5.5 0 1 0 0 11 5.5 5.5 0 0 0 0-11zm0 2a3.5 3.5 0 1 1 0 7 3.5 3.5 0 0 1 0-7zm0 2a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3z"/></svg>
+          <div><strong>Apple Podcasts</strong><span class="platform-sub">Subscribe &amp; follow</span></div>
+        </a>
+        <a href="https://youtube.com/playlist?list=PLUnJ58rriL2lv7HxYcTJfqJdpcnywrolD&si=YgbJuKn2kRoHiyPX"
+           target="_blank" rel="noopener noreferrer" class="platform-card" aria-label="Watch on YouTube">
+          <svg width="34" height="34" viewBox="0 0 24 24" fill="#FF0000" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          <div><strong>YouTube</strong><span class="platform-sub">Full video episodes</span></div>
+        </a>
+        <a href="https://www.tiktok.com/@afterschoolspecial3?_r=1&_t=ZP-95Q65GnrFPi"
+           target="_blank" rel="noopener noreferrer" class="platform-card" aria-label="Follow on TikTok">
+          <svg width="34" height="34" viewBox="0 0 24 24" fill="#ffffff" aria-hidden="true"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.72a8.2 8.2 0 0 0 4.78 1.52V6.79a4.85 4.85 0 0 1-1.01-.1z"/></svg>
+          <div><strong>TikTok</strong><span class="platform-sub">Clips &amp; highlights</span></div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CAUTION TAPE — Footer -->
+  <div class="caution-tape caution-tape--pgold" role="presentation" aria-hidden="true">
+    <div class="caution-tape-inner">
+      <span>★ AFTER SCHOOL SPECIAL ★</span><span>★ DETROIT ★</span><span>★ NEW EPISODES WEEKLY ★</span><span>★ 106 EPISODES STRONG ★</span>
+      <span>★ AFTER SCHOOL SPECIAL ★</span><span>★ DETROIT ★</span><span>★ NEW EPISODES WEEKLY ★</span><span>★ 106 EPISODES STRONG ★</span>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
   <footer role="contentinfo">
     <div class="container footer-inner">
       <a href="index.html" class="footer-logo" aria-label="After School Special Podcast home">
@@ -329,12 +303,22 @@
     const mobileMenu   = document.getElementById('mobileMenu');
     const mobileClose  = document.getElementById('mobileClose');
     const mobileLinks  = mobileMenu.querySelectorAll('.mobile-link');
-    function openMenu()  { mobileMenu.classList.add('open'); mobileMenu.setAttribute('aria-hidden','false'); hamburgerBtn.setAttribute('aria-expanded','true'); document.body.style.overflow='hidden'; }
-    function closeMenu() { mobileMenu.classList.remove('open'); mobileMenu.setAttribute('aria-hidden','true'); hamburgerBtn.setAttribute('aria-expanded','false'); document.body.style.overflow=''; }
+    function openMenu() {
+      mobileMenu.classList.add('open');
+      mobileMenu.setAttribute('aria-hidden', 'false');
+      hamburgerBtn.setAttribute('aria-expanded', 'true');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeMenu() {
+      mobileMenu.classList.remove('open');
+      mobileMenu.setAttribute('aria-hidden', 'true');
+      hamburgerBtn.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    }
     hamburgerBtn.addEventListener('click', openMenu);
     mobileClose.addEventListener('click', closeMenu);
     mobileLinks.forEach(l => l.addEventListener('click', closeMenu));
-    document.addEventListener('keydown', e => { if(e.key==='Escape') closeMenu(); });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMenu(); });
   </script>
 
 </body>
