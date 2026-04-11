@@ -459,39 +459,35 @@
   </footer>
 
   <script>
-    const hamburgerBtn = document.getElementById('hamburgerBtn');
-    const mobileMenu   = document.getElementById('mobileMenu');
-    const mobileClose  = document.getElementById('mobileClose');
-    const mobileLinks  = mobileMenu.querySelectorAll('.mobile-link');
-    function openMenu()  { mobileMenu.classList.add('open'); mobileMenu.setAttribute('aria-hidden','false'); hamburgerBtn.setAttribute('aria-expanded','true'); document.body.style.overflow='hidden'; }
-    function closeMenu() { mobileMenu.classList.remove('open'); mobileMenu.setAttribute('aria-hidden','true'); hamburgerBtn.setAttribute('aria-expanded','false'); document.body.style.overflow=''; }
-    hamburgerBtn.addEventListener('click', openMenu);
-    mobileClose.addEventListener('click', closeMenu);
-    mobileLinks.forEach(l => l.addEventListener('click', closeMenu));
-    document.addEventListener('keydown', e => { if(e.key==='Escape') closeMenu(); });
-  </script>
-  <script>
-  const mobileMenu = document.querySelector('.mobile-menu');
-  const hamburger = document.querySelector('.hamburger');
-  const closeBtn = document.querySelector('.mobile-close');
-  const navLinks = document.querySelectorAll('.mobile-menu a');
+  // This version handles all potential names for your elements
+  const menu = document.querySelector('.mobile-menu') || document.getElementById('mobileMenu');
+  const openBtn = document.querySelector('.hamburger') || document.getElementById('hamburgerBtn');
+  const closeBtn = document.querySelector('.mobile-close') || document.getElementById('mobileClose');
+  
+  // Select ALL links inside the mobile menu
+  const allLinks = document.querySelectorAll('.mobile-menu a, .mobile-link, #mobileMenu a');
 
-  if (hamburger && mobileMenu) {
-    hamburger.addEventListener('click', () => {
-      mobileMenu.classList.add('open');
+  if (openBtn && menu) {
+    openBtn.addEventListener('click', () => {
+      menu.classList.add('open');
+      document.body.style.overflow = 'hidden'; 
     });
   }
 
-  if (closeBtn && mobileMenu) {
-    closeBtn.addEventListener('click', () => {
-      mobileMenu.classList.remove('open');
-    });
+  const doClose = () => {
+    if (menu) {
+      menu.classList.remove('open');
+      document.body.style.overflow = ''; 
+    }
+  };
+
+  if (closeBtn) {
+    closeBtn.addEventListener('click', doClose);
   }
 
-  navLinks.forEach(link => {
-    link.addEventListener('click', () => {
-      mobileMenu.classList.remove('open');
-    });
+  // Closes the menu when you click any link
+  allLinks.forEach(link => {
+    link.addEventListener('click', doClose);
   });
 </script>
 
