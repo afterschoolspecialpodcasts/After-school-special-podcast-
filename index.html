@@ -459,37 +459,42 @@
   </footer>
 
   <script>
-  // This version handles all potential names for your elements
+  // 1. Identify the menu and the buttons
   const menu = document.querySelector('.mobile-menu') || document.getElementById('mobileMenu');
   const openBtn = document.querySelector('.hamburger') || document.getElementById('hamburgerBtn');
   const closeBtn = document.querySelector('.mobile-close') || document.getElementById('mobileClose');
   
-  // Select ALL links inside the mobile menu
-  const allLinks = document.querySelectorAll('.mobile-menu a, .mobile-link, #mobileMenu a');
+  // 2. Target every link inside the menu
+  const navLinks = document.querySelectorAll('.mobile-menu a, .mobile-link, #mobileMenu a');
 
+  // 3. Logic to Open the menu
   if (openBtn && menu) {
     openBtn.addEventListener('click', () => {
       menu.classList.add('open');
-      document.body.style.overflow = 'hidden'; 
+      document.body.style.overflow = 'hidden'; // Keeps the background from moving
     });
   }
 
+  // 4. Logic to Close the menu
   const doClose = () => {
     if (menu) {
       menu.classList.remove('open');
-      document.body.style.overflow = ''; 
+      document.body.style.overflow = ''; // Restores normal scrolling
     }
   };
 
+  // Close with the 'X' button
   if (closeBtn) {
     closeBtn.addEventListener('click', doClose);
   }
 
-  // Closes the menu when you click any link
-  allLinks.forEach(link => {
+  // 5. THE FIX: Close menu automatically when any link is tapped
+  navLinks.forEach(link => {
     link.addEventListener('click', doClose);
   });
 </script>
 
 </body>
+</html>
+
 </html>
