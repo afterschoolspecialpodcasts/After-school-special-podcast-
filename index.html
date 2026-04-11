@@ -458,11 +458,10 @@
     </div>
   </footer>
 
- <script>
+<script>
   const menu = document.getElementById('mobileMenu') || document.querySelector('.mobile-menu');
-  const openBtn = document.getElementById('hamburgerBtn') || document.getElementById('hamburger');
+  const openBtn = document.getElementById('hamburgerBtn') || document.querySelector('.hamburger');
   const closeBtn = document.getElementById('mobileClose') || document.querySelector('.mobile-close');
-  const allNavLinks = document.querySelectorAll('#mobileMenu a, .mobile-link');
 
   const doOpen = () => {
     if (menu) {
@@ -483,10 +482,17 @@
   if (openBtn) openBtn.addEventListener('click', doOpen);
   if (closeBtn) closeBtn.addEventListener('click', doClose);
 
-  allNavLinks.forEach(link => {
-    link.addEventListener('click', doClose);
-  });
+  // THE NUCLEAR OPTION: 
+  // If the menu is open and you click ANYWHERE inside it, it closes.
+  if (menu) {
+    menu.addEventListener('click', (e) => {
+      // This ensures it only closes if you hit a link or the background, 
+      // not just random empty space (optional, but safer)
+      doClose();
+    });
+  }
 </script>
+
 
 
 </body>
