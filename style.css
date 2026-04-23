@@ -902,6 +902,122 @@ footer { background:var(--bg-deeper); border-top:1px solid rgba(244,211,94,0.1);
 @media (min-width: 2000px) { :root { --container-w: 1400px; } body { font-size:1.05rem; } }
 
 /* ======================================================
+   ░░ INDEX PAGE — classes replacing all former inline styles
+   ====================================================== */
+
+/* EP spotlight section background */
+.spotlight-section {
+  background: linear-gradient(135deg, var(--bg-deeper) 0%, #2a0a44 60%, #1a0033 100%);
+  padding: 5rem 0;
+  border-bottom: 2px solid var(--border-gold);
+}
+
+/* Welcome video section background */
+.welcome-video-section {
+  background: var(--bg-dark);
+  padding: 4.5rem 0;
+}
+
+/* Section label centered variant */
+.section-label--center {
+  text-align: center;
+  display: block;
+}
+
+/* Section heading modifiers */
+.section-heading--center { text-align: center; }
+.section-heading--accent  { color: var(--accent); }
+
+/* Divider centered variant */
+.divider-accent--center {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1rem;
+}
+
+/* Welcome video intro paragraph */
+.welcome-video-intro {
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  max-width: 540px;
+  margin: 0 auto 2rem;
+}
+
+/* Centered CTA wrapper (replaces div style="text-align:center;margin-top:Xrem") */
+.section-cta-center {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+/* Button small variant — replaces font-size/padding inline on Apple Podcasts btn */
+.btn-outline--sm {
+  font-size: 0.85rem;
+  padding: 0.65rem 1.3rem;
+}
+
+/* Button with margin-top — replaces style="margin-top:0.5rem" on crew section link */
+.btn-outline--mt {
+  margin-top: 0.5rem;
+}
+
+/* Apple badge centered — replaces style="margin:0.5rem auto;display:inline-flex" */
+.apple-badge--centered {
+  margin: 0.5rem auto;
+  display: inline-flex;
+}
+
+/* HSC (hero sticker cluster) — replaces all inline style= on cluster items */
+.hsc-sticker-a {
+  width:  clamp(44px, 8vw, 68px);
+  height: clamp(44px, 8vw, 68px);
+  font-size: clamp(0.45rem, 1.1vw, 0.58rem);
+  animation: sticker-float-a 3.9s ease-in-out infinite;
+}
+.hsc-sticker-b {
+  width:  clamp(44px, 8vw, 70px);
+  height: clamp(44px, 8vw, 70px);
+  font-size: clamp(0.45rem, 1.1vw, 0.58rem);
+  animation: sticker-float-b 4s ease-in-out infinite 0.5s;
+}
+.hsc-sticker-c {
+  width:  clamp(42px, 7.5vw, 66px);
+  height: clamp(42px, 7.5vw, 66px);
+  font-size: clamp(0.43rem, 1vw, 0.56rem);
+  animation: sticker-float-c 3.6s ease-in-out infinite;
+}
+/* Badge rotation variants */
+.hsc-badge-rot-pos { transform: rotate(8deg); }
+.hsc-badge-rot-neg { transform: rotate(-6deg); }
+
+/* Icon span inside cluster circles */
+.hsc-icon {
+  font-size: clamp(0.75rem, 1.8vw, 1rem);
+  line-height: 1;
+  display: block;
+}
+
+/* Detroit Made blob sticker */
+.hsc-blob-wrap {
+  position: relative;
+  animation: sticker-float-d 4.5s ease-in-out infinite;
+  transform: rotate(-10deg);
+  display: inline-block;
+}
+.hsc-blob-label {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #1a0033;
+  font-family: var(--font-stamp);
+  font-size: clamp(0.4rem, 1vw, 0.58rem);
+  text-align: center;
+  line-height: 1.1;
+  pointer-events: none;
+}
+
+/* ======================================================
    ░░ ABOUT PAGE — classes to replace inline styles
    ====================================================== */
 
