@@ -2355,3 +2355,72 @@ body.menu-open {
 
 /* TikTok footer CTA wrapper (text-align:center;margin-top:2rem;) */
 .text-center-row-mt-2 { text-align: center; margin-top: 2rem; }
+
+/* ============================================================
+   ░░ SHOW CARD — SPOTIFY EMBED + LISTEN BUTTON (v7.2)
+   In-card Spotify show embed and prominent Spotify-branded
+   "Listen on Spotify" CTA. Designed to scale cleanly: cards
+   keep their existing structure, the embed slots between
+   description and action row, and the new Spotify button
+   sits below the action row as a primary-emphasis CTA.
+   ============================================================ */
+
+/* Spotify embed wrapper — matches the existing .collective-livefeed-embed
+   visual treatment (gold border, radius, dark background). */
+.show-card-spotify-embed {
+  width: 100%;
+  margin: 0.5rem 0 1rem;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid var(--border-gold);
+  background: #000;
+  line-height: 0;
+}
+.show-card-spotify-embed iframe {
+  width: 100%;
+  display: block;
+  border: 0;
+  height: 232px;
+}
+
+/* Prominent "Listen on Spotify" button — Spotify brand green,
+   slightly stronger visual weight than the existing red/gold/outline
+   action buttons so it reads as the primary "go to Spotify" CTA. */
+.btn-spotify {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+  margin-top: 0.85rem;
+  padding: 0.8rem 1.25rem;
+  background: #1DB954;
+  color: #fff;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  border: 2px solid #1DB954;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background var(--transition), transform var(--transition), box-shadow var(--transition);
+  box-shadow: 0 4px 14px rgba(29, 185, 84, 0.18);
+}
+.btn-spotify:hover,
+.btn-spotify:focus {
+  background: #1ED760;
+  border-color: #1ED760;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(29, 185, 84, 0.32);
+  color: #fff;
+}
+.btn-spotify-icon {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+@media (max-width: 480px) {
+  .btn-spotify { font-size: 0.85rem; padding: 0.7rem 1rem; }
+  .show-card-spotify-embed iframe { height: 232px; }
+}
