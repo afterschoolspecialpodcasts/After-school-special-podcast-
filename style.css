@@ -2424,3 +2424,76 @@ body.menu-open {
   .btn-spotify { font-size: 0.85rem; padding: 0.7rem 1rem; }
   .show-card-spotify-embed iframe { height: 232px; }
 }
+
+/* ============================================================
+   ░░ SHOW CARD — SECONDARY LINKS + CROSS-PROMO (v7.3)
+   Per spec: "high-conversion listening funnel — preview content
+   via embeds, immediately continue listening on Spotify, are
+   guided to explore additional podcasts on the same page."
+
+   The existing .btn-spotify keeps its primary emphasis (green
+   Spotify-brand button). These new rules style the secondary
+   tier (website/YouTube links) and the cross-promotion line
+   beneath each card so they read as supporting content, not
+   competition for the primary CTA.
+   ============================================================ */
+
+/* Secondary links row — text-style with arrows, lower visual weight */
+.show-card-secondary-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 1.25rem;
+  margin-top: 0.85rem;
+  padding-top: 0.85rem;
+  border-top: 1px solid rgba(244, 211, 94, 0.10);
+}
+.show-card-secondary-link {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-decoration: none;
+  letter-spacing: 0.01em;
+  transition: color var(--transition);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.2rem;
+}
+.show-card-secondary-link:hover,
+.show-card-secondary-link:focus {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* Cross-promotion line — soft gold callout that points to another
+   show on the same page. Anchor-link target uses scroll-margin so
+   the destination show isn't hidden behind the sticky navbar. */
+.show-card-crosspromo {
+  margin-top: 0.85rem;
+  padding-top: 0.75rem;
+  font-size: 0.8rem;
+  font-style: italic;
+  color: var(--text-muted);
+  letter-spacing: 0.01em;
+  line-height: 1.4;
+}
+.show-card-crosspromo a {
+  color: var(--accent);
+  font-weight: 700;
+  font-style: normal;
+  text-decoration: none;
+  border-bottom: 1px dashed rgba(244, 211, 94, 0.4);
+  transition: color var(--transition), border-bottom-color var(--transition);
+}
+.show-card-crosspromo a:hover,
+.show-card-crosspromo a:focus {
+  color: #fff;
+  border-bottom-color: var(--accent);
+}
+
+/* Anchor scroll offset so cross-promo links don't drop the target
+   show behind the sticky navbar (~99px tall when announcement bar
+   is showing; safe value covers it). */
+.show-card[id] {
+  scroll-margin-top: 110px;
+}
