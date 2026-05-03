@@ -2552,3 +2552,76 @@ body.menu-open {
 .show-card[id] {
   scroll-margin-top: 110px;
 }
+
+/* ============================================================
+   ░░ CROSS-PROMO WRAPPER + SCROLL UX (v7.5)
+   Per spec: separate the "Keep listening:" label from the show
+   name link so the show name pill can wrap as a single unit on
+   mobile instead of breaking awkwardly mid-phrase.
+
+   The existing .show-card-crosspromo styles (pill background,
+   border, hover lift, ::after arrow) remain in effect on the
+   anchor — we just add the wrapper + label rules and a
+   white-space:nowrap belt-and-braces guard on .cross-promo.
+
+   Also adds:
+   - html { scroll-behavior: smooth } for animated anchor jumps
+   - .podcast-section { scroll-margin-top: 100px } so each show
+     lands cleanly below the sticky navbar after a cross-promo tap
+   ============================================================ */
+
+/* Smooth in-page anchor scrolling — applies globally per spec.
+   Affects every anchor jump on every page (announcement bar
+   "Explore the Network →", cross-promo links, etc.). */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Respect users who have requested reduced motion in their OS. */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
+
+/* Cross-promo wrapper: keeps "Keep listening:" label and the
+   show-name pill on the same line when there's room, wraps to
+   two lines cleanly on narrow screens with the pill staying
+   intact (white-space:nowrap on the pill prevents mid-name
+   line breaks). */
+.cross-promo-wrap {
+  margin-top: 1.1rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.cross-label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--text-muted);
+  opacity: 0.85;
+  line-height: 1;
+}
+
+/* Spec guard — keep the show-name link from wrapping mid-name.
+   The .show-card-crosspromo rule already handles the pill style. */
+.cross-promo {
+  white-space: nowrap;
+}
+
+/* When inside the new wrapper, neutralize the old top margin from
+   .show-card-crosspromo (the wrapper now owns the spacing). */
+.cross-promo-wrap .show-card-crosspromo {
+  margin-top: 0;
+}
+
+/* Spec: scroll offset so cross-promo anchor jumps land cleanly
+   under the sticky navbar instead of getting hidden behind it. */
+.podcast-section {
+  scroll-margin-top: 100px;
+}
+
+@media (max-width: 480px) {
+  .cross-label { font-size: 0.74rem; }
+}
