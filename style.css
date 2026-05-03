@@ -2467,28 +2467,83 @@ body.menu-open {
 
 /* Cross-promotion line — soft gold callout that points to another
    show on the same page. Anchor-link target uses scroll-margin so
-   the destination show isn't hidden behind the sticky navbar. */
+   the destination show isn't hidden behind the sticky navbar.
+
+   v7.4 update: cross-promo is now a single pill-style anchor element
+   ("Keep listening: <show name>"). Subtle low-opacity bg, thin border,
+   CSS-generated arrow with rightward motion on hover, and a slight
+   press scale-down for mobile tap feedback. Designed to read as a
+   subtle "next step" cue, not a heavy CTA. */
 .show-card-crosspromo {
-  margin-top: 0.85rem;
-  padding-top: 0.75rem;
-  font-size: 0.8rem;
-  font-style: italic;
+  /* Spec: inline-block, slight padding (6-12px), fully rounded, very
+     light bg, thin low-opacity border, small top margin to separate
+     cleanly from the content above. */
+  display: inline-flex;
+  align-items: center;
+  margin-top: 1.1rem;
+  padding: 0.45rem 0.95rem 0.45rem 0.95rem;
+  border-radius: 999px;
+  background: rgba(244, 211, 94, 0.06);
+  border: 1px solid rgba(244, 211, 94, 0.18);
   color: var(--text-muted);
-  letter-spacing: 0.01em;
-  line-height: 1.4;
-}
-.show-card-crosspromo a {
-  color: var(--accent);
-  font-weight: 700;
-  font-style: normal;
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
   text-decoration: none;
-  border-bottom: 1px dashed rgba(244, 211, 94, 0.4);
-  transition: color var(--transition), border-bottom-color var(--transition);
+  line-height: 1;
+  white-space: nowrap;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition:
+    background var(--transition),
+    border-color var(--transition),
+    color var(--transition),
+    transform var(--transition);
+  -webkit-tap-highlight-color: transparent;
 }
-.show-card-crosspromo a:hover,
-.show-card-crosspromo a:focus {
-  color: #fff;
-  border-bottom-color: var(--accent);
+
+/* CSS-generated arrow (per spec: not hardcoded text). Pseudo-element
+   keeps the markup clean and gives us full control over the hover
+   motion. */
+.show-card-crosspromo::after {
+  content: "→";
+  display: inline-block;
+  margin-left: 0.5rem;
+  font-size: 0.95em;
+  color: var(--accent);
+  transition: transform var(--transition), color var(--transition);
+  will-change: transform;
+}
+
+.show-card-crosspromo:hover,
+.show-card-crosspromo:focus-visible {
+  background: rgba(244, 211, 94, 0.12);
+  border-color: rgba(244, 211, 94, 0.35);
+  color: var(--text-white);
+  transform: translateY(-1px);
+  outline: none;
+}
+.show-card-crosspromo:hover::after,
+.show-card-crosspromo:focus-visible::after {
+  transform: translateX(3px);
+  color: var(--accent);
+}
+
+/* Mobile press feedback — subtle scale down on active state */
+.show-card-crosspromo:active {
+  transform: scale(0.98);
+  background: rgba(244, 211, 94, 0.16);
+}
+
+/* Small phone — tighten padding slightly so the pill stays compact
+   when the show name pushes width close to the column edge. */
+@media (max-width: 480px) {
+  .show-card-crosspromo {
+    font-size: 0.74rem;
+    padding: 0.4rem 0.85rem;
+  }
 }
 
 /* Anchor scroll offset so cross-promo links don't drop the target
